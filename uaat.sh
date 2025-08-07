@@ -35,7 +35,7 @@ audit_users_and_groups() {
       PASS_EXPIRES="N/A"
 
       CHAGE_INFO=$(chage -l "$username" 2>/dev/null)
-      if [ $? -eq 0 ]; then
+      if CHAGE_INFO=$(chage -l "$username" 2>/dev/null); then
         LAST_LOGIN=$(echo "$CHAGE_INFO" | grep "Last login" | awk -F': ' '{print $2}')
         PASS_LAST_CHANGE=$(echo "$CHAGE_INFO" | grep "Last password change" | awk -F': ' '{print $2}')
         PASS_EXPIRES=$(echo "$CHAGE_INFO" | grep "Password expires" | awk -F': ' '{print $2}')
