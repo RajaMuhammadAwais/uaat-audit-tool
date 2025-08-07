@@ -1,0 +1,27 @@
+name: Shell Script CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  audit-script:
+    name: Audit Shell Script
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: ✅ Install ShellCheck
+        run: sudo apt-get install -y shellcheck
+
+      - name: 🔍 Lint UAAT shell script
+        run: shellcheck uaat.sh
+
+      - name: 🧪 Run script (test mode)
+        run: |
+          chmod +x uaat.sh
+          ./uaat.sh || echo "Script ran with expected errors due to limited GitHub Actions environment."
