@@ -9,13 +9,9 @@ SECURITY_EMAIL="security@example.com"
 # Function to audit /etc/passwd and /etc/group
 audit_users_and_groups() {
   echo "Auditing users and groups..."
-  # Read /etc/passwd and /etc/group
-  # For each user, extract relevant information
-  # Store in a temporary data structure or directly output to CSV format
-  # Example: USERNAME:UID:GID:HOME_DIR:SHELL
-  # Example: GROUPNAME:MEMBERS
+ 
 
-  # Placeholder for user data collection
+  
   USER_DATA=""
 
   while IFS=':' read -r username password uid gid geckos home_dir shell; do
@@ -32,7 +28,7 @@ audit_users_and_groups() {
       fi
       USER_DATA+="$SUDO_ACCESS:"
 
-      # Check account status (expired/inactive)
+    
       ACCOUNT_STATUS="Active"
       LAST_LOGIN="N/A"
       PASS_LAST_CHANGE="N/A"
@@ -84,11 +80,10 @@ audit_users_and_groups() {
 
 
 
-# Function to generate CSV report
 generate_csv_report() {
   echo "Generating CSV report: ${REPORT_FILE}"
   echo "Username,UID,GID,Home Directory,Shell,Sudo Access,Account Status,Last Login,Password Last Changed,Password Expires,SSH Keys Found" > "${REPORT_FILE}"
-  cat /tmp/uaat_user_data.tmp | sed 's/:/,/g' >> "${REPORT_FILE}"
+  sed 's/:/,/g' /tmp/uaat_user_data.tmp >> "${REPORT_FILE}"
   rm /tmp/uaat_user_data.tmp
 
 }
