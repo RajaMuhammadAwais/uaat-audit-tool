@@ -14,7 +14,7 @@ audit_users_and_groups() {
   
   USER_DATA=""
 
-  while IFS=':' read -r username password uid gid geckos home_dir shell; do
+  while IFS=':' read -r username _ uid gid _ home_dir shell; do
     if [ "$uid" -ge 1000 ] && [ "$uid" -ne 65534 ]; then # Exclude system users and nobody
       USER_DATA+="$username:$uid:$gid:$home_dir:$shell:"
 
