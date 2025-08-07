@@ -1,4 +1,11 @@
-# User Access Audit Tool (UAAT)
+# 🛡️ User Access Audit Tool (UAAT)
+
+[![Shell Script](https://img.shields.io/badge/-Shell%20Script-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
+[![Linux](https://img.shields.io/badge/-Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.linux.org/)
+[![Security Audit](https://img.shields.io/badge/-Security%20Audit-critical?style=for-the-badge&logo=datadog&logoColor=white)](https://en.wikipedia.org/wiki/Computer_security_audit)
+[![CSV Report](https://img.shields.io/badge/-CSV%20Report-005F73?style=for-the-badge&logo=microsoft-excel&logoColor=white)](https://tools.ietf.org/html/rfc4180)
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 ## Introduction
 
